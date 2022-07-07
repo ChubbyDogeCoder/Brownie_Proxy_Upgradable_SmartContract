@@ -50,13 +50,11 @@ def main():
     # Upgrading the SmC
 
     _BoxV2 = BoxV2.deploy({"from": account}, publish_source=True)
-    _BoxV2.wait(1)
     uup_txxx = upgrade(
         account,
         proxy,
         _BoxV2.address,
         proxy_admin_contract=proxy_admin,
-        publish_source=True,
     )
 
     print("\nProxy has been Upgraded!! 😁😎😎\n")
